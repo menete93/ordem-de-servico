@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Observações da Ordem de Serviço</h1>
+    <mat-card class="mat-elevation-z8">
+        <p id="abertura">Data de Abertura:   {{os.dataAbertura}}</p>
+         <div class="div">
+         </div>
+     </mat-card>
+     
+<mat-card class="mat-elevation-z8">
+    <p class="lab"> <span style="color: rgb(0, 255, 72);">OBSERVAÇÕES:</span> {{os.observacoes}}</p>
+    <div class="div">
+    </div>
+    
+</mat-card>
+
+
+    <button class="mat-elevation-z8 conttainer"  (click)="cancel()" mat-stroked-button color="warn">close</button> 
+</div>

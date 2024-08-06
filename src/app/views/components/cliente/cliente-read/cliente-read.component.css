@@ -1,0 +1,44 @@
+.create {
+    color: #4CAF50;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  
+  }
+  
+  .create button {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: blueviolet;
+  }
+  
+  #edit{
+    color: #10bce3;
+  }
+  
+  
+  #delete{
+    color: #e3bc10;
+  }
+  
+  
+  .conttainer {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  /* Estilo para o cabeçalho da tabela */
+  .mat-header-cell {
+    background-color: #4CAF50;
+    /* Cor de fundo do cabeçalho */
+    color: white;
+    /* Cor do texto do cabeçalho */
+    font-weight: bold;
+    padding: 16px;
+  }
+  
+  .mat-header-cell{
+    color: red;
+  }
