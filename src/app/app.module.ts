@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -47,6 +47,11 @@ import { OsUpdateComponent } from './views/components/os/os-update/os-update.com
 import { OsViewComponent } from './views/components/os/os-view/os-view.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
+import { LoginComponent } from './pages/login/login.component';
+import { DefaultLoginLayoutComponent } from './views/components/default-login-layout/default-login-layout.component';
+import { PrimaryInputComponent } from './components/primary-input/primary-input.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { CustumInterceptor } from './services/custum-interceptor';
 
 
 
@@ -66,6 +71,10 @@ import { OsClosedComponent } from './views/components/os/os-closed/os-closed.com
     OsCreateComponent,
     OsUpdateComponent,
     OsViewComponent,
+    //SignupComponent,
+    //PrimaryInputComponent,
+    // DefaultLoginLayoutComponent,
+    // LoginComponent,
     
 
  
@@ -95,10 +104,13 @@ import { OsClosedComponent } from './views/components/os/os-closed/os-closed.com
     MatSnackBarModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatMenuModule
-    
-  ],
-  providers: [],
+    MatMenuModule,
+    DefaultLoginLayoutComponent
+],
+  providers: [{
+  provide:HTTP_INTERCEPTORS,useClass:CustumInterceptor,
+  multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

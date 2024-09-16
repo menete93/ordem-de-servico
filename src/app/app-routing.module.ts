@@ -14,12 +14,17 @@ import { OsCreateComponent } from './views/components/os/os-create/os-create.com
 import { OsUpdateComponent } from './views/components/os/os-update/os-update.component';
 import { OsViewComponent } from './views/components/os/os-view/os-view.component';
 import { OsClosedComponent } from './views/components/os/os-closed/os-closed.component';
+import { LoginComponent } from './pages/login/login.component';
+import { DefaultLoginLayoutComponent } from './views/components/default-login-layout/default-login-layout.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { AuthGuardService } from './services/auth/auth-guard.service';
 
 const routes: Routes = [
 
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path: 'Tecnico',
@@ -75,7 +80,15 @@ const routes: Routes = [
     path: 'os/view/:id',
     component: OsViewComponent
   },
-
+  {
+    path: 'login',
+    component: LoginComponent,
+    //canActivate:[AuthGuardService]
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
 ];
 
 @NgModule({
